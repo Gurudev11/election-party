@@ -1,197 +1,64 @@
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-# election-party
-A responsive Election Party laravel web application with Votes enrolling &amp; Results for managing election parties and candidates where calculating votes dynamically, and showcasing results based on cities.
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-## Table of Contents
+## About Laravel
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Database](#database)
-- [Contributing](#contributing)
-- [License](#license)
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## Features
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-- CRUD operations for parties and candidates
-- User-defined Pagination
-- Dynamic vote calculation based on cities with percentage
-- Unique constraints for candidate enrollment and party names
-- One-to-one and one-to-many relationships between tables (address, candidate, party, state, city)
-- State and city dependent dropdowns
-- Leading candidate calculation and display
-- Marquee tag for showing results like news channels
-- Buttons for easy navigation: party registration, party details, candidate registration, candidate details, votes
-- Live vote updates with dynamic result recalculation
-- Blade templating engine
-- Validations
-- Service Logic
-- Dependent Dropdowns
-- Image Handling
-- Error Handling
-- Drag & Drop Functionality
-- CSRF Protection
-- Eloquent ORM
-- Grid sorting,  Search and Sort Functionality
-- Bootstrap integration
-- jQuery Integration
-- AJAX, event listeners, and DOM manipulation
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Installation
+## Learning Laravel
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/Gurudev11/election-party.git
-    ```
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-2. Navigate to the project directory:
-    ```bash
-    cd election-party
-    ```
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-3. Install dependencies:
-    ```bash
-    composer install
-    npm install
-    ```
+## Laravel Sponsors
 
-4. Copy the `.env.example` file to `.env`:
-    ```bash
-    cp .env.example .env
-    ```
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-5. Generate an application key:
-    ```bash
-    php artisan key:generate
-    ```
+### Premium Partners
 
-6. Set up your database credentials in the `.env` file.
-
-7. Run the database migrations:
-    ```bash
-    php artisan migrate
-    ```
-
-8. Start the development server:
-    ```bash
-    php artisan serve
-    ```
-9. Access the application in your web browser at http://localhost:8000/index.
-
-## Usage
-
-### CRUD Operations
-
-- **Create**: Register new parties and candidates.
-- **Read**: View details of parties and candidates.
-- **Update**: Edit existing party and candidate details.
-- **Delete**: Remove parties and candidates.
-
-### Pagination, Search, and Sort
-
-- Pagination to see the number of records in party & candidate details, search to fetch the records, and  grid sort features to rearrange & view the records.
-
-### Validations
-
-- Form validations and rules for conventions to store accurate details in database in both frontent & backend.
-
-### Service Logic
-
-- We do not have same names for the party.
-- We can calculate age from the candidate dob and to store in database.
-- We can not have more than one candidate from same city to enroll in one party.
-- We’re calculating votes, who’s leading and with the percentage dynamically from wherever we’re checking.
-
-### Vote Calculation
-
-- Votes are calculated dynamically when added.
-- Results are recalculated to determine the leading candidate.
-- Display leading candidates based on selected city.
-
-### Navigation Buttons
-
-- **Party Registration**: Register new parties.
-- **Party Details**: View and manage party details.
-- **Candidate Registration**: Register new candidates.
-- **Candidate Details**: View and manage candidate details.
-- **Votes**: View all votes and results.
-
-### Image Handling  
-
-- When you upload images in candidate form, that will be stored in public/photo folder in your project and the path is stored as string in database.
-- And for the party logos, public/logos folder.
-- If you like to make this as large set of application, you can store the images as binary data, also known as BLOB (Binary Large OBject) data but this has some disadvantageous.
-
-### Error Handling
-
-- Pass the error from backend to the view and handle the form perfectly to show the message the view.
-
-### Drag & Drop
-
-- Drag & drop functionality are included in party & candidate tables.
-
-### CSRF Protection
-
-- This application implements CSRF protection using Laravel's built-in CSRF token feature, ensuring that forms include a unique token to prevent cross-site request forgery attacks. This token is automatically verified on form submission to enhance security.
-
-### Marquee Tag
-
-- Results are displayed in a marquee tag at the top of the main page, similar to news channels.
-
-### Dependent Dropdowns
-
-- State and relative cities dropdowns on the main page to filter and view results.
-
-## Folder Structure
-
-Brief explanation of the important folders and files in my project.
-├── app
-│ ├── Http
-│ │ └── Controllers # Application controllers
-│ └── Models # Application models
-├── bootstrap # Bootstrap files
-├── config # Configuration files
-├── database # Database migrations and seeds
-├── public
-│ ├── css # CSS files
-│ └── storage # Public storage for uploaded files
-├── resources
-│ ├── views # Blade template files
-│ └── assets # Other frontend assets (JS, images, etc.)
-├── routes # Route definitions
-├── storage # Storage for logs, cache, etc.
-├── tests # Test files
-└── vendor # Composer dependencies
-
-## Database
-
-- Change your username, password, database name in .env file to set up the database.
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
 
 ## Contributing
 
-If you wish to contribute to the project, follow these steps:
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-1. Fork the repository.
-2. Create a new branch:
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
-3. Make your changes and commit them:
-    ```bash
-    git commit -m "Add your commit message here"
-    ```
-4. Push to the branch:
-    ```bash
-    git push origin feature/your-feature-name
-    ```
-5. Open a pull request.
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
-This project is licensed under the MIT License.
-
-## Contact
-
-If you have any questions or suggestions, feel free to contact us at [gurudevz237@gmail.com].
-
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
